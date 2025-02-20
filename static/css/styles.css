@@ -1,0 +1,139 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Animated Gradient Background */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #8ec5fc, #e0c3fc);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Container styles */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Stylish heading */
+h1 {
+    font-size: 26px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Input field styling */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: rgb(98, 63, 63);
+    text-align: center;
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #ff7f50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+/* Button hover effect */
+button:hover {
+    background: #ff4500;
+    transform: scale(1.05);
+}
+
+/* Floating bubbles */
+.bubble {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 10s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.3); opacity: 0.5; }
+    50% { transform: translateY(-10vh) scale(1); opacity: 0.8; }
+    100% { transform: translateY(100vh) scale(0.3); opacity: 0.5; }
+}
+
+/* Confetti effect */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    opacity: 0.8;
+    animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* Responsive design for small screens */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+    }
+    h1 {
+        font-size: 22px;
+    }
+}
